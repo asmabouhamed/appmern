@@ -1,0 +1,85 @@
+.containerP {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 1200px; /* Increase the value to widen the container */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-container input[type="text"] {
+  width: 300px; /* Réduisez légèrement la largeur pour un meilleur ajustement */
+  padding: 10px; /* Augmentez légèrement le rembourrage */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn-primary {
+  padding: 12px 24px; /* Ajustez la taille du bouton pour un meilleur contraste */
+  background-color: #272109;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  border: none; /* Supprimez la bordure pour un look plus épuré */
+  transition: background-color 0.3s; /* Ajoutez une transition au survol */
+}
+
+.btn-primary:hover {
+  background-color: #3c2e1e; /* Assombrissez légèrement la couleur au survol */
+}
+
+.success-message {
+  padding: 12px 20px; /* Ajustez le rembourrage pour un meilleur espacement */
+  margin-bottom: 20px;
+  background-color: #28a745;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.produits-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.produits-table th,
+.produits-table td {
+  border: 1px solid #ddd;
+  padding: 12px; /* Ajustez le rembourrage pour un meilleur espacement */
+  text-align: center; /* Centrez le texte horizontalement */
+}
+
+.produits-table th {
+  background-color: #f2f2f2;
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0 5px;
+}
+
+.btn-icon svg {
+  width: 20px;
+  height: 20px;
+  color: #272109;
+  transition: color 0.3s; /* Ajoutez une transition pour l'icône au survol */
+}
+
+.btn-icon:hover svg {
+  color: #3c2e1e; /* Changez la couleur de l'icône au survol */
+}

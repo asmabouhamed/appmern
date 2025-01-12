@@ -1,0 +1,49 @@
+/* App.css */
+
+.App {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.Nav {
+  background-color: #272109;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.NavTitle {
+  margin: 0;
+  padding: 0;
+}
+
+.NavList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.NavItem {
+  margin-right: 10px;
+}
+
+.NavLink {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.NavLink.active {
+  background-color: #272109;
+}
+
+.routes-container {
+  padding: 20px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
