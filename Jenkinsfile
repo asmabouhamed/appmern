@@ -35,36 +35,12 @@ pipeline {
             }
         }
 
-        stage('Scan App-Blog Image') { // Mise à jour du nom du stage
-            when { changeset "app-blog/*" } // Remplacé server/* par app-blog/*
-            steps {
-                script {
-                    sh """
-                    docker run --rm -v /var/run/docker.sock:/var/run/docker.sock \\
-                    -e TRIVY_DB_REPO=ghcr.io/aquasecurity/trivy-db \\
-                    aquasec/trivy:latest image --exit-code 0 --severity LOW,MEDIUM,HIGH,CRITICAL \\
-                    ${IMAGE_NAME_APP_BLOG} // Utilise IMAGE_NAME_APP_BLOG
-                    """
-                }
-            }
-        }
+        
 
-        stage('Scan Client Image') {
-            when { changeset "client/*" }
-            steps {
-                script {
-                    sh """
-                    docker run --rm -v /var/run/docker.sock:/var/run/docker.sock \\
-                    -e TRIVY_DB_REPO=ghcr.io/aquasecurity/trivy-db \\
-                    aquasec/trivy:latest image --exit-code 0 --severity LOW,MEDIUM,HIGH,CRITICAL \\
-                    ${IMAGE_NAME_CLIENT}
-                    """
-                }
-            }
+        
         }
 
         stage('Push App-Blog Image to Docker Hub') { // Mise à jour du nom du stage
-            when { changeset "app-blog/*" } // Remplacé server/* par app-blog/*
             steps {
                 script {
                     docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
@@ -75,7 +51,6 @@ pipeline {
         }
 
         stage('Push Client Image to Docker Hub') {
-            when { changeset "client/*" }
             steps {
                 script {
                     docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
