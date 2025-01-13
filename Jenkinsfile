@@ -1,10 +1,5 @@
 pipeline {
     agent any
-
-    triggers {
-        pollSCM('* * * * *')
-    }
-
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub')
         IMAGE_NAME_APP_BLOG = 'asmabh/mern-server' // Remplacé server par app-blog
@@ -21,7 +16,6 @@ pipeline {
         }
 
         stage('Build App-Blog Image') { // Mise à jour du nom du stage
-            when { changeset "app-blog/*" } // Remplacé server/* par app-blog/*
             steps {
                 dir('app-blog') { // Mise à jour du chemin
                     script {
@@ -32,7 +26,6 @@ pipeline {
         }
 
         stage('Build Client Image') {
-            when { changeset "client/*" }
             steps {
                 dir('client') {
                     script {
