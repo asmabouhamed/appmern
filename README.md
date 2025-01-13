@@ -10,7 +10,7 @@ Create a `Dockerfile` in the backend folder containing the necessary instruction
 
 Create a `Dockerfile` in the `client` folder containing the necessary instructions to containerize the frontend component.
 
-Each file should define the steps required to build and run their respective components in a Docker container.
+
 
 ---
 
