@@ -20,9 +20,7 @@ Create a `docker-compose.yml` file at the root of the project to orchestrate the
 
 Ensure that the services are configured to communicate with each other correctly.
 
-```bash
-docker-compose up --build
-```
+
 
 ---
 
