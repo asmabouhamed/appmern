@@ -38,7 +38,7 @@ pipeline {
         
 
         
-        }
+        
 
         stage('Push App-Blog Image to Docker Hub') { // Mise à jour du nom du stage
             steps {
