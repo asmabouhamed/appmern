@@ -5,7 +5,6 @@ pipeline {
         IMAGE_NAME_APP_BLOG = 'asmabh/mern-server' // Remplacé server par app-blog
         IMAGE_NAME_CLIENT = 'asmabh/mern-client'
     }
-
     stages {
         stage('Checkout') {
             steps {
@@ -38,13 +37,12 @@ pipeline {
         
 
         
-        
 
-        stage('Push App-Blog Image to Docker Hub') { // Mise à jour du nom du stage
+        stage('Push App-Blog Image to Docker Hub') { 
             steps {
                 script {
                     docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
-                        dockerImageAppBlog.push() // Utilise dockerImageAppBlog
+                        dockerImageAppBlog.push() 
                     }
                 }
             }
